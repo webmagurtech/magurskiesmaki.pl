@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Lightbox - Magurskie Smaki</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <link rel="stylesheet" href="custom-lightbox.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .gallery-item-title {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .gallery-item {
+                border-radius: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery {
+                gap: 8px;
+            }
+            
+            .gallery-item {
+                border-radius: 12px;
+            }
+        }
+        
+        .instruction {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .instruction h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .instruction ul {
+            margin: 10px 0;
+        }
+        
+        .instruction li {
+            margin: 5px 0;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Demo Lightbox Gallery</h1>
+    <p class="description">Kliknij na dowolne zdjęcie aby je powiększyć</p>
+    
+    <div class="instruction">
+        <h3>📖 Instrukcja użycia:</h3>
+        <ul>
+            <li><strong>Kliknij</strong> na zdjęcie aby je powiększyć</li>
+            <li>Użyj <strong>strzałek</strong> (← →) aby przejść do następnego/poprzedniego zdjęcia</li>
+            <li>Kliknij <strong>X</strong> lub poza zdjęcie aby zamknąć</li>
+            <li>Najedź myszką na zdjęcie aby zobaczyć efekt hover</li>
+        </ul>
+    </div>
+    
+    <div class="gallery">
+        <div class="gallery-item">
+            <a href="./uploads/DSC_0010-2-edited.jpg" data-lightbox="gallery" data-title="Desery i słodkości - Elegancka prezentacja">
+                <img src="./uploads/DSC_0010-2-edited.jpg" alt="Desery" class="lightbox-enabled">
+            </a>
+        </div>
+        
+        <div class="gallery-item">
+            <a href="./uploads/DSC_0024-1-edited.jpg" data-lightbox="gallery" data-title="Przystawki - Deski serów i wędlin">
+                <img src="./uploads/DSC_0024-1-edited.jpg" alt="Przystawki" class="lightbox-enabled">
+            </a>
+        </div>
+        
+        <div class="gallery-item">
+            <a href="./uploads/realizacja6-edited.jpg" data-lightbox="gallery" data-title="Catering - Profesjonalna obsługa">
+                <img src="./uploads/realizacja6-edited.jpg" alt="Catering" class="lightbox-enabled">
+            </a>
+        </div>
+        
+        <div class="gallery-item">
+            <a href="./uploads/realizacja-1.jpg" data-lightbox="gallery" data-title="Realizacja #1">
+                <img src="./uploads/realizacja-1.jpg" alt="Realizacja 1" class="lightbox-enabled">
+            </a>
+        </div>
+        
+        <div class="gallery-item">
+            <a href="./uploads/realizacja2.jpg" data-lightbox="gallery" data-title="Realizacja #2">
+                <img src="./uploads/realizacja2.jpg" alt="Realizacja 2" class="lightbox-enabled">
+            </a>
+        </div>
+        
+        <div class="gallery-item">
+            <a href="./uploads/realizacja3.jpg" data-lightbox="gallery" data-title="Realizacja #3">
+                <img src="./uploads/realizacja3.jpg" alt="Realizacja 3" class="lightbox-enabled">
+            </a>
+        </div>
+        
+        <div class="gallery-item">
+            <a href="./uploads/realizacja4a.jpg" data-lightbox="gallery" data-title="Realizacja #4">
+                <img src="./uploads/realizacja4a.jpg" alt="Realizacja 4" class="lightbox-enabled">
+            </a>
+        </div>
+        
+        <div class="gallery-item">
+            <a href="./uploads/realizacja_3.jpg" data-lightbox="gallery" data-title="Realizacja #5">
+                <img src="./uploads/realizacja_3.jpg" alt="Realizacja 5" class="lightbox-enabled">
+            </a>
+        </div>
+        
+        <div class="gallery-item">
+            <a href="./uploads/realizacja_.jpg" data-lightbox="gallery" data-title="Realizacja #6">
+                <img src="./uploads/realizacja_.jpg" alt="Realizacja 6" class="lightbox-enabled">
+            </a>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'Zdjęcie %1 z %2',
+            'fadeDuration': 300,
+            'imageFadeDuration': 300
+        });
+    </script>
+</body>
+</html>

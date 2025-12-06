@@ -1,0 +1,116 @@
+/* ==================== CUSTOM STYLES ==================== */
+
+/* Lightbox Image Styles */
+.lightbox-enabled {
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+.lightbox-enabled:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== GALLERY GRID ==================== */
+.wp-block-kubio-image-gallery__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-gallery-grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.image-gallery-grid-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 24px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.image-gallery-grid-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+    .wp-block-kubio-image-gallery__gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wp-block-kubio-image-gallery__gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .image-gallery-grid-item {
+        border-radius: 16px;
+    }
+    
+    .image-gallery-grid-item img {
+        border-radius: 16px;
+    }
+    
+    .lightbox-enabled:hover {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    .wp-block-kubio-image-gallery__gallery {
+        gap: 8px;
+    }
+    
+    .image-gallery-grid-item {
+        border-radius: 12px;
+    }
+    
+    .image-gallery-grid-item img {
+        border-radius: 12px;
+    }
+}
+
+/* ==================== LIGHTBOX CUSTOMIZATION ==================== */
+.lb-data .lb-caption {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.lb-data .lb-number {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* ==================== GENERAL STYLES ==================== */
+img {
+    max-width: 100%;
+    height: auto;
+}
