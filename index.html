@@ -2679,31 +2679,17 @@
     display: none !important;
 }
 
-#kubio button#galleryLoadMoreBtn,
-button#galleryLoadMoreBtn {
-    display: block !important;
-    margin: 30px auto !important;
-    width: auto !important;
+button#galleryLoadMoreBtn:active,
+button#galleryLoadMoreBtn:focus {
     background-color: #F7931E !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    line-height: 1 !important;
-    letter-spacing: 1px !important;
-    text-decoration: none !important;
-    text-transform: uppercase !important;
     color: white !important;
     border: 2px solid white !important;
-    border-radius: 56px !important;
-    padding: 15px 30px !important;
-    text-align: center !important;
-    cursor: pointer !important;
-    transition: all 0.3s !important;
+    outline: none !important;
 }
 
-#kubio button#galleryLoadMoreBtn:hover,
 button#galleryLoadMoreBtn:hover {
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    border-color: #F7931E !important;
+    background-color: rgba(247, 147, 30, 0.8) !important;
+    border-color: white !important;
 }
 
     }
@@ -4578,8 +4564,7 @@ button#galleryLoadMoreBtn:hover {
                           </figure>
                         <!--====================galery end====================-->
                       </div>
-                      <button id="galleryLoadMoreBtn" onclick="toggleGalleryImages()" style="display: block; margin: 30px auto; background-color: #F7931E; font-weight: 600; font-size: 14px; line-height: 1; letter-spacing: 1px; text-transform: uppercase; color: white; border: 2px solid white; border-radius: 56px; padding: 15px 30px; text-align: center; cursor: pointer; transition: all 0.3s;">Załaduj więcej</button>
-                      
+                      <button id="galleryLoadMoreBtn" onclick="toggleGalleryImages()" style="display: block; margin: 30px auto; background-color: #F7931E !important; font-weight: 600; font-size: 14px; line-height: 1; letter-spacing: 1px; text-transform: uppercase; color: white !important; border: 2px solid white; border-radius: 56px; padding: 15px 30px; text-align: center; cursor: pointer; transition: all 0.3s; -webkit-tap-highlight-color: transparent;">Załaduj więcej</button>
                     </div>
                   </div>
                 </div>
