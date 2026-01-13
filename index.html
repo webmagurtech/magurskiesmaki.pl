@@ -419,6 +419,14 @@
       padding-bottom: 280px;
     }
 
+    .gallery-item-hidden.is-hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
     body:not(.extra-1) .style-yah3nQs5qXQ-outer h1,
     body:not(.extra-1) .style-yah3nQs5qXQ-outer h1[data-kubio] {
       color: rgba(var(--kubio-color-5), 1);
@@ -5301,28 +5309,32 @@ button#galleryLoadMoreBtn:hover {
   document.addEventListener('DOMContentLoaded', function() {
       const hiddenItems = document.querySelectorAll('.gallery-item-hidden');
       hiddenItems.forEach(item => {
-          item.style.display = 'none';
+          item.classList.add('is-hidden');
       });
   });
   
   function toggleGalleryImages() {
       const hiddenItems = document.querySelectorAll('.gallery-item-hidden');
       const btn = document.getElementById('galleryLoadMoreBtn');
-      const isHidden = hiddenItems[0].style.display === 'none' || hiddenItems[0].style.display === '';
+      const isHidden = hiddenItems[0].classList.contains('is-hidden');
       
       if (isHidden) {
           // Pokazujemy zdjęcia
           hiddenItems.forEach(item => {
+              item.classList.remove('is-hidden');
               item.style.display = 'block';
           });
           btn.textContent = 'Pokaż mniej';
       } else {
           // Ukrywamy zdjęcia i scrollujemy do przycisku
           hiddenItems.forEach(item => {
+              item.classList.add('is-hidden');
               item.style.display = 'none';
           });
           btn.textContent = 'Załaduj więcej';
-          btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(function() {
+              btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
       }
   }
   </script>
