@@ -5299,8 +5299,13 @@ button#galleryLoadMoreBtn:hover {
   });
   
   function toggleGalleryImages() {
+      alert('Przycisk kliknięty!'); // Test czy funkcja działa
+      
       const hiddenItems = document.querySelectorAll('.gallery-item-hidden');
       const btn = document.getElementById('galleryLoadMoreBtn');
+      
+      alert('Znaleziono ' + hiddenItems.length + ' ukrytych zdjęć'); // Test ile zdjęć znaleziono
+      
       const isHidden = hiddenItems[0].classList.contains('is-hidden');
       
       if (isHidden) {
@@ -5310,6 +5315,7 @@ button#galleryLoadMoreBtn:hover {
               item.style.display = 'block';
           });
           btn.textContent = 'Pokaż mniej';
+          alert('Zdjęcia pokazane');
       } else {
           // Ukrywamy zdjęcia i scrollujemy do przycisku
           hiddenItems.forEach(item => {
@@ -5317,6 +5323,7 @@ button#galleryLoadMoreBtn:hover {
               item.style.display = 'none';
           });
           btn.textContent = 'Załaduj więcej';
+          alert('Zdjęcia ukryte');
           setTimeout(function() {
               btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }, 100);
